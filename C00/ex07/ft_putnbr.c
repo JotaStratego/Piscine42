@@ -11,62 +11,44 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-void	ft_decimals(int nbr)
-{
-	int	dec;
-	int units;
-
-	dec = (nbr / 10) + '0';
-	units = (nbr % 10) + '0';
-	write(1, &dec, 1);
-	write(1, &units, 1);
-}
 
 void	ft_putnbr(int nbr)
 {
 	if (nbr == -2147483648)
+	{
 		write(1, "-2147483648", 11);
-	
-	if (nbr < 0 && nbr > -2147483648)
+		return ;
+	}
+	if (nbr < 0)
 	{
 		write(1, "-", 1);
 		nbr *= -1;
 	}
-
-	if (nbr >= 0 && nbr < 10)
+	if (nbr < 10)
 	{
 		nbr += '0';
 		write(1, &nbr, 1);
 	}
 	else
 	{
-		while (nbr > 10)
-		{
-			ft_decimals(nbr);
-			nbr = nbr / 10;
-		}
+		ft_putnbr(nbr / 10);
+		nbr = nbr % 10 + '0';
+		write(1, &nbr, 1);
 	}
 }
-	
 
-int	main(void)
+/*int	main(void)
 {
-	int	a;
-	int	b;
 	int	c;
 	int	d;
-	int e;
+	int	e;
+	int	f;
 
-	a = 1;
-	b = 11;
-	c = 1111;
-	d = -111;
-	e = -2147483648;
-
-
-	ft_putnbr(a);
-	write(1, "\n", 1);
-	ft_putnbr(b);
+	c = 241587;
+	d = -50015;
+	e = -2147483647;
+	f = -2147483648;
+	ft_putnbr(f);
 	write(1, "\n", 1);
 	ft_putnbr(c);
 	write(1, "\n", 1);
@@ -74,4 +56,4 @@ int	main(void)
 	write(1, "\n", 1);
 	ft_putnbr(e);
 	return (0);
-}
+}*/
