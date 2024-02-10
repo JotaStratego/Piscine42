@@ -14,6 +14,7 @@
 void	ft_putstr(char *str)
 {
 	int	i;
+
 	while (str[i] != '\0')
 	{
 		write(1, &str[i], 1);
@@ -21,10 +22,11 @@ void	ft_putstr(char *str)
 	}
 }
 
-int	main(void)
+/*int	main(void)
 {
-	char *v = "Hola mundo!";
+	char	*v;
 
+	v = "Hola mundo!";
 	ft_putstr(v);
 	return (0);
-}
+}*/

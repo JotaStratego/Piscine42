@@ -17,11 +17,11 @@ void	ft_div_mod(int a, int b, int *div, int *mod)
 	*mod = a % b;
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int	a;
 	int	b;
-	int div;
+	int	div;
 	int	mod;
 
 	a = 10;
@@ -30,4 +30,4 @@ int	main(void)
 	printf("%d\n", div);
 	printf("%d", mod);
 	return (0);
-}
+}*/

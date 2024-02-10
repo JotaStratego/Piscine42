@@ -14,14 +14,17 @@
 int	ft_strlen(char *str)
 {
 	int	i;
+
 	while (str[i] != '\0')
 		i++;
 	return (i);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	char *v = "Hola mundo!";
-	printf("El número de caracteres de la cadena de texto es: %d", ft_strlen(v));
+	char	*v;
+
+	v = "Hola mundo!";
+	printf("El nº de caracteres de la cadena de texto es: %d", ft_strlen(v));
 	return (0);
-}
+}*/
