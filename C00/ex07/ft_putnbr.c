@@ -44,7 +44,7 @@ void	ft_putnbr(int nbr)
 	int	e;
 	int	f;
 
-	c = 241587;
+	c = 00;
 	d = -50015;
 	e = -2147483647;
 	f = -2147483648;
