@@ -15,15 +15,17 @@ void	ft_rev_int_tab(int *tab, int size)
 {
 	int	swap;
 	int	i;
+	int	z;
 
 	i = 0;
-	while (size != i)
+	z = size - 1;
+	while (i < (size / 2))
 	{
 		swap = tab[i];
-		tab[i] = tab[size - 1];
-		tab[size - 1] = swap;
+		tab[i] = tab[z];
+		tab[z] = swap;
 		i++;
-		size--;
+		z--;
 	}
 }
 
