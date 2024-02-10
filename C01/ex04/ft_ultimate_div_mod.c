@@ -17,7 +17,7 @@ void	ft_ultimate_div_mod(int *a, int *b)
 	*b = *a % *b;
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int	a;
 	int	b;
@@ -31,4 +31,4 @@ int	main(void)
 	ft_ultimate_div_mod(pt1, pt2);
 	printf("Div: %d, Mod: %d.", a, b);
 	return (0);
-}
+}*/
