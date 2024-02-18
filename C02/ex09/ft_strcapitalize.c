@@ -6,38 +6,39 @@
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 10:15:01 by javialva          #+#    #+#             */
-/*   Updated: 2024/02/17 10:15:07 by javialva         ###   ########.fr       */
+/*   Updated: 2024/02/18 12:23:42 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 char	*ft_strcapitalize(char *str)
 {
-	int	i;
+	char		c;
+	int		i;
+	int		new;
 
-	i = 1;
+	i = 0;
+	new = 1;
 	while (str[i] != '\0')
 	{
-		if (str[0] >= 97 && str[0] <= 122)
-			str[0] = str[0] - 32;
-		if (((str[i - 1] >= 20 && str[i - 1] <= 47)
-			|| (str[i - 1] >= 58 && str[i - 1] <= 100)
-			|| (str[i - 1] >= 123 && str[i - 1] <= 126))
-			&& (str[i] >= 97 && str[i] <= 122))
+		c = str[i];
+		if (new == 1 && (c >= 'a' && c <= 'z'))
 			str[i] = str[i] - 32;
-		if ((str[i - 1] >= 97 && str[i - 1] <= 122)
-			&& (str[i] >= 65 && str[i] <= 90))
+		else if (new == 0 && (c >= 'A' && c <= 'Z'))
 			str[i] = str[i] + 32;
+		if (c < '0' || (c > '9' && c < 'A') || (c > 'Z' && c < 'a')
+			|| c > 'z')
+			new = 1;
+		else
+			new = 0;
 		i++;
 	}
 	return (str);
 }
 
-int	main(void)
+/*int main(void)
 {
-	char	cadena[] = "hola de 34edades para !aRRiba! no 42me Gusta";
+	char str[] = "hOlA mUUUy 54buenas-noches+espana";
 
-	printf("%s", ft_strcapitalize(cadena));
+	printf("%s", ft_strcapitalize(str));
 	return (0);
-}
+}*/
