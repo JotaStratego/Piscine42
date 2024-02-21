@@ -6,7 +6,7 @@
 /*   By: javialva <javialva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 10:31:14 by javialva          #+#    #+#             */
-/*   Updated: 2024/02/19 10:50:24 by javialva         ###   ########.fr       */
+/*   Updated: 2024/02/21 10:21:15 by javialva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_conversor_hexadecimal(char c)
+void	ft_conversor_hexadecimal(unsigned char c)
 {
 	char	*hexbase;
 
@@ -25,7 +25,7 @@ void	ft_conversor_hexadecimal(char c)
 	if (c / 16 > 0)
 	{
 		ft_putchar(hexbase[c / 16]);
-		ft_putchar(hexbase[c / 16]);
+		ft_putchar(hexbase[c % 16]);
 	}
 	else
 	{
